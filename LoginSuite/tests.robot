@@ -31,3 +31,17 @@ Login
 
     Mouse Over      //div[@unbxdattr='product']
     Click Element    //div[@unbxdattr='product'][position()=1]
+
+
+Login1
+    Open Browser    url=https://phptravels.net/home    browser=gc
+    Maximize Browser Window
+#    Set Selenium Speed    1s
+    Click Element    //a[contains(text(),'Flights')]
+    Mouse Over    id=select2-drop-mask
+    #Input Text    @id=select2-drop-mask    Los Angeles (LAX)
+    Capture Element Screenshot    id=select2-drop-mask
+    
+    Click Element    //*[@name="flightmanualSearch"]//span[text()='Enter city or airport']
+    Input Text    //*[@name="flightmanualSearch"]//input[@class='select2-input']    LAX
+    Click Element    //span[normalize-space()='lax'] 
