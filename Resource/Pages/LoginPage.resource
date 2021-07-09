@@ -8,6 +8,7 @@ ${USERNAME_LOCATOR}      id=authUser
 ${PASSWORD_LOCATOR}      id=clearPass
 ${LANGUAGE_LOCATOR}      name=languageChoice
 ${LOGIN_LOCATOR}    xpath=//button[@type='submit']
+${ERROR_LOCATOR}    xpath=//div[contains(text(),'Invalid')]
 
 *** Keywords ***
 Enter Username
@@ -28,3 +29,6 @@ Select Language
 
 Click Login
     Click Element      ${LOGIN_LOCATOR}
+
+Validate Invalid Error Message
+    Element Should Contain      ${ERROR_LOCATOR}       Invalid username or password
