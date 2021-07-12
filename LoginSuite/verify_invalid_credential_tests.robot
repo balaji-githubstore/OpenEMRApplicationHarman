@@ -10,9 +10,10 @@ Test Teardown   End Browser
 
 Test Template   Verify Invalid Credential Template
 
+Library     DataDriver      file=../TestData/OpenEMRTestData.xlsx       sheet_name=VerifyInvalidCredentialTemplate
+
 *** Test Cases ***
-TC1     admin123      pass123       Dutch       Invalid username or password
-TC2     John      john123       Dutch       Invalid username or password
+TC1_${username}_${password}
 
 *** Keywords ***
 Verify Invalid Credential Template
@@ -22,5 +23,6 @@ Verify Invalid Credential Template
     Select Language    ${language}
     Click Login
     Validate Invalid Error Message      ${expectedvalue}
+    [Teardown]      End Browser With ScreenShot
 
 

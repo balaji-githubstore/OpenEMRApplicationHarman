@@ -45,6 +45,6 @@ Validate Invalid Error Message
     [Arguments]     ${expectedvalue}
     [Documentation]    This keyword will return the invalid credential error message \n
     ...     Examples: \n
-    ...     | Validate Invalid Error Message |
-    ...     | Validate Invalid Error Message |
+    ...     | Validate Invalid Error Message | Invalid username |
+    ...     | Validate Invalid Error Message | Invalid username |
     Element Should Contain      ${ERROR_LOCATOR}       ${expectedvalue}
