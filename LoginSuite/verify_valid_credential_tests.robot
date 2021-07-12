@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation   This suite will handle all the test case related to
-...     the valid credentails - OEM - 102
+...     the valid credentails - OEM - 102 - Using Test Template
 Resource    ../Resource/Base/common_functionality.resource
 
 Resource    ../Resource/Pages/LoginPage.resource
@@ -18,11 +18,11 @@ TC3     accountant   accountant    English (Indian)    Flow Board    OpenEMR
 
 *** Keywords ***
 Verify Valid Credential Template
-    [Arguments]     ${username}     ${password}     ${language}     ${pagedata}     ${expectedtitle}
+    [Arguments]     ${username}     ${password}     ${language}     ${pagedata}     ${expectedvalue}
     Enter Username     ${username}
     Enter Password      ${password}
     Select Language    ${language}
     Click Login
     Wait Until Dashboard Page Contains     ${pagedata}
-    Title Should Be    ${expectedtitle}
+    Title Should Be    ${expectedvalue}
 
