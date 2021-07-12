@@ -13,7 +13,7 @@ Test Template   Verify Invalid Credential Template
 Library     DataDriver      file=../TestData/OpenEMRTestData.xlsx       sheet_name=VerifyInvalidCredentialTemplate
 
 *** Test Cases ***
-TC1_${username}_${password}
+TC1_${scope}_${username}_${password}
 
 *** Keywords ***
 Verify Invalid Credential Template

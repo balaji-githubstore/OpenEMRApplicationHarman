@@ -8,7 +8,6 @@ Library     DatabaseLibrary
 *** Variables ***
 ${BROWSER}      gc
 
-
 *** Keywords ***
 Launch Browser
     [Documentation]     This will launch browser

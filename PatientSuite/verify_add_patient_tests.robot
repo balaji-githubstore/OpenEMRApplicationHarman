@@ -7,6 +7,7 @@ Resource    ../Resource/Pages/LoginPage.resource
 Resource    ../Resource/Pages/DashboardPage.resource
 
 Library     DatabaseLibrary
+Library     Collections
 
 Test Setup      Run Keywords     Launch Browser     AND     Connect To Database     dbapiModuleName=pymysql
 ...     dbName=dbfree_db     dbUsername=dbfree_db     dbPassword=12345678    dbHost=db4free.net     dbPort=3306
@@ -28,3 +29,16 @@ TC2
     Log To Console    sjjjs
     #abort the complete execution
 #    Fatal Error
+    @{colors}   Create List     red    blue
+#    Set Global Variable    @{colors}
+    Select Frame    //iframe[@class="modalIframe"]
+    Input Text    id=mobileNoInp    1233
+    Unselect Frame
+
+    Run Keyword If    '${scope}'=='admin'
+    ...    Click Element  //a
+
+    Click Element    //a
+    ${text}     Handle Alert    LEAVE       timeout=50s
+    Handle Alert
+
