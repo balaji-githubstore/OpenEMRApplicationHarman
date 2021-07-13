@@ -1,333 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.9.4 on win32)" generated="20210712 14:35:21.552" rpa="false" schemaversion="2">
-<suite id="s1" name="Verify Invalid Credential Tests" source="D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\LoginSuite\verify_invalid_credential_tests.robot">
-<test id="s1-t1" name="TC1_Blank username__peter123_">
-<kw name="Launch Browser" library="common_functionality" type="SETUP">
-<doc>This will launch browser
-and set implicit wait
-Example
-| Launch Browser |</doc>
-<kw name="Append To Environment Variable" library="OperatingSystem">
-<arg>Path</arg>
-<arg>${EXECDIR}${/}driver</arg>
-<doc>Appends given ``values`` to environment variable ``name``.</doc>
-<msg timestamp="20210712 14:35:31.265" level="INFO">Environment variable 'Path' set to value 'D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\venv\Scripts;C:\Program Files\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\JiDi\AppData\Local\Android\Sdk\platform-tools;C:\Users\JiDi\AppData\Local\Android\Sdk\emulator;C:\Program Files\nodejs\;C:\Components\Maven\apache-maven-3.6.3\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin;C:\Program Files\Python39\Scripts;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-11.0.11\bin;C:\Components\CSharp\NUnit.Console-3.12.0\bin\netcoreapp3.1;C:\Users\JiDi\AppData\Roaming\npm;C:\Users\JiDi\AppData\Local\Microsoft\WindowsApps1;C:\Users\JiDi\.dotnet\tools;C:\Users\JiDi\AppData\Local\Programs\Microsoft VS Code\bin;;D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\driver'.</msg>
-<status status="PASS" starttime="20210712 14:35:31.264" endtime="20210712 14:35:31.265"/>
+<robot generator="Robot 4.0.3 (Python 3.9.4 on win32)" generated="20210713 15:00:32.610" rpa="false" schemaversion="2">
+<suite id="s1" name="Rb1 Tests &amp; Rb2 Tests">
+<suite id="s1-s1" name="Rb1 Tests" source="D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\DemoSuite\rb1_tests.robot">
+<test id="s1-s1-t1" name="TC1">
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.648" endtime="20210713 15:00:32.648"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210712 14:35:31.265" level="INFO">Opening browser 'gc' to base url 'None'.</msg>
-<status status="PASS" starttime="20210712 14:35:31.265" endtime="20210712 14:35:34.442"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210712 14:35:34.442" endtime="20210712 14:35:34.578"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210712 14:35:34.578" endtime="20210712 14:35:34.580"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://demo.openemr.io/b/openemr/index.php</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210712 14:35:34.581" level="INFO">Opening url 'https://demo.openemr.io/b/openemr/index.php'</msg>
-<status status="PASS" starttime="20210712 14:35:34.580" endtime="20210712 14:35:35.532"/>
-</kw>
-<status status="PASS" starttime="20210712 14:35:31.264" endtime="20210712 14:35:35.532"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>peter123</arg>
-<arg>Dutch</arg>
-<arg>Invalid username or password</arg>
-<kw name="Enter Username" library="LoginPage">
-<arg>${username}</arg>
-<doc>This keyword will send username 
-Examples: 
-| Enter Username | admin |
-| Enter Username | accountant |</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_LOCATOR}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210712 14:35:35.538" level="INFO">Typing text '' into text field 'id=authUser'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210712 14:35:42.533" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:42.161" endtime="20210712 14:35:42.533"/>
-</kw>
-<msg timestamp="20210712 14:35:42.534" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:42.596" level="FAIL">Element with locator 'id=authUser' not found.</msg>
-<status status="FAIL" starttime="20210712 14:35:35.537" endtime="20210712 14:35:42.596"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:35.535" endtime="20210712 14:35:42.597"/>
-</kw>
-<kw name="Enter Password" library="LoginPage">
-<arg>${password}</arg>
-<doc>This keyword will send password 
-Examples: 
-| Enter Password | pass |
-| Enter Password | accountant |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:42.597" endtime="20210712 14:35:42.597"/>
-</kw>
-<kw name="Select Language" library="LoginPage">
-<arg>${language}</arg>
-<doc>This keyword will select dropdown using the text/label 
-Examples: 
-| Select Language | Dutch |
-| Select Language | Danish |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:42.597" endtime="20210712 14:35:42.597"/>
-</kw>
-<kw name="Click Login" library="LoginPage">
-<doc>This keyword use to click login button 
-Examples: 
-| Click Login |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:42.597" endtime="20210712 14:35:42.597"/>
-</kw>
-<kw name="Validate Invalid Error Message" library="LoginPage">
-<arg>${expectedvalue}</arg>
-<doc>This keyword will return the invalid credential error message 
-Examples: 
-| Validate Invalid Error Message | Invalid username |
-| Validate Invalid Error Message | Invalid username |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:42.597" endtime="20210712 14:35:42.597"/>
-</kw>
-<kw name="End Browser With ScreenShot" library="common_functionality" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210712 14:35:42.607" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:42.602" endtime="20210712 14:35:42.607"/>
-</kw>
-<msg timestamp="20210712 14:35:42.608" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:42.611" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:42.598" endtime="20210712 14:35:42.612"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210712 14:35:42.612" endtime="20210712 14:35:45.226"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:42.598" endtime="20210712 14:35:45.227">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</status>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:35.534" endtime="20210712 14:35:45.227"/>
-</kw>
-<kw name="End Browser" library="common_functionality" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210712 14:35:45.229" endtime="20210712 14:35:45.229"/>
-</kw>
-<status status="PASS" starttime="20210712 14:35:45.228" endtime="20210712 14:35:45.230"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:31.263" endtime="20210712 14:35:45.230">Element with locator 'id=authUser' not found.
-
-Also keyword teardown failed:
-NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</status>
+<tag>alltests</tag>
+<tag>dtests</tag>
+<tag>tc1</tag>
+<status status="PASS" starttime="20210713 15:00:32.647" endtime="20210713 15:00:32.649"/>
 </test>
-<test id="s1-t2" name="TC1_Invalid crden_John_john123_">
-<kw name="Launch Browser" library="common_functionality" type="SETUP">
-<doc>This will launch browser
-and set implicit wait
-Example
-| Launch Browser |</doc>
-<kw name="Append To Environment Variable" library="OperatingSystem">
-<arg>Path</arg>
-<arg>${EXECDIR}${/}driver</arg>
-<doc>Appends given ``values`` to environment variable ``name``.</doc>
-<msg timestamp="20210712 14:35:45.235" level="INFO">Environment variable 'Path' set to value 'D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\venv\Scripts;C:\Program Files\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\JiDi\AppData\Local\Android\Sdk\platform-tools;C:\Users\JiDi\AppData\Local\Android\Sdk\emulator;C:\Program Files\nodejs\;C:\Components\Maven\apache-maven-3.6.3\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin;C:\Program Files\Python39\Scripts;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-11.0.11\bin;C:\Components\CSharp\NUnit.Console-3.12.0\bin\netcoreapp3.1;C:\Users\JiDi\AppData\Roaming\npm;C:\Users\JiDi\AppData\Local\Microsoft\WindowsApps1;C:\Users\JiDi\.dotnet\tools;C:\Users\JiDi\AppData\Local\Programs\Microsoft VS Code\bin;;D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\driver;D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\driver'.</msg>
-<status status="PASS" starttime="20210712 14:35:45.235" endtime="20210712 14:35:45.235"/>
+<test id="s1-s1-t2" name="TC2">
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc2</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.651" endtime="20210713 15:00:32.651"/>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210712 14:35:45.236" level="INFO">Opening browser 'gc' to base url 'None'.</msg>
-<status status="PASS" starttime="20210712 14:35:45.235" endtime="20210712 14:35:47.820"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210712 14:35:47.820" endtime="20210712 14:35:47.950"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210712 14:35:47.950" endtime="20210712 14:35:47.951"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://demo.openemr.io/b/openemr/index.php</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210712 14:35:47.952" level="INFO">Opening url 'https://demo.openemr.io/b/openemr/index.php'</msg>
-<status status="PASS" starttime="20210712 14:35:47.951" endtime="20210712 14:35:48.706"/>
-</kw>
-<status status="PASS" starttime="20210712 14:35:45.234" endtime="20210712 14:35:48.706"/>
-</kw>
-<kw name="Verify Invalid Credential Template">
-<arg>John</arg>
-<arg>john123</arg>
-<arg>English (Indian)</arg>
-<arg>Invalid username or password</arg>
-<kw name="Enter Username" library="LoginPage">
-<arg>${username}</arg>
-<doc>This keyword will send username 
-Examples: 
-| Enter Username | admin |
-| Enter Username | accountant |</doc>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${USERNAME_LOCATOR}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210712 14:35:48.720" level="INFO">Typing text 'John' into text field 'id=authUser'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210712 14:35:48.733" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:48.721" endtime="20210712 14:35:48.733"/>
-</kw>
-<msg timestamp="20210712 14:35:48.733" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:48.736" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:48.719" endtime="20210712 14:35:48.736"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:48.718" endtime="20210712 14:35:48.736"/>
-</kw>
-<kw name="Enter Password" library="LoginPage">
-<arg>${password}</arg>
-<doc>This keyword will send password 
-Examples: 
-| Enter Password | pass |
-| Enter Password | accountant |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:48.737" endtime="20210712 14:35:48.737"/>
-</kw>
-<kw name="Select Language" library="LoginPage">
-<arg>${language}</arg>
-<doc>This keyword will select dropdown using the text/label 
-Examples: 
-| Select Language | Dutch |
-| Select Language | Danish |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:48.737" endtime="20210712 14:35:48.737"/>
-</kw>
-<kw name="Click Login" library="LoginPage">
-<doc>This keyword use to click login button 
-Examples: 
-| Click Login |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:48.737" endtime="20210712 14:35:48.737"/>
-</kw>
-<kw name="Validate Invalid Error Message" library="LoginPage">
-<arg>${expectedvalue}</arg>
-<doc>This keyword will return the invalid credential error message 
-Examples: 
-| Validate Invalid Error Message | Invalid username |
-| Validate Invalid Error Message | Invalid username |</doc>
-<status status="NOT RUN" starttime="20210712 14:35:48.738" endtime="20210712 14:35:48.738"/>
-</kw>
-<kw name="End Browser With ScreenShot" library="common_functionality" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210712 14:35:48.751" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:48.744" endtime="20210712 14:35:48.751"/>
-</kw>
-<msg timestamp="20210712 14:35:48.751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:48.753" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<status status="FAIL" starttime="20210712 14:35:48.739" endtime="20210712 14:35:48.753"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210712 14:35:48.754" endtime="20210712 14:35:51.092"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:48.738" endtime="20210712 14:35:51.093">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</status>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:48.717" endtime="20210712 14:35:51.093"/>
-</kw>
-<kw name="End Browser" library="common_functionality" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210712 14:35:51.094" endtime="20210712 14:35:51.095"/>
-</kw>
-<status status="PASS" starttime="20210712 14:35:51.094" endtime="20210712 14:35:51.095"/>
-</kw>
-<status status="FAIL" starttime="20210712 14:35:45.232" endtime="20210712 14:35:51.096">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-
-
-Also keyword teardown failed:
-NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</status>
+<tag>alltests</tag>
+<tag>dtests</tag>
+<status status="PASS" starttime="20210713 15:00:32.650" endtime="20210713 15:00:32.652"/>
 </test>
-<doc>This suite will handle all the test case related to
-the invalid credentails - OEM - 102</doc>
-<status status="FAIL" starttime="20210712 14:35:21.557" endtime="20210712 14:35:51.098"/>
+<test id="s1-s1-t3" name="TC3">
+<kw name="Set Tags" library="BuiltIn">
+<arg>tc3</arg>
+<arg>tc3.1</arg>
+<doc>Adds given ``tags`` for the current test or all tests in a suite.</doc>
+<msg timestamp="20210713 15:00:32.654" level="INFO">Set tags 'tc3' and 'tc3.1'.</msg>
+<status status="PASS" starttime="20210713 15:00:32.654" endtime="20210713 15:00:32.654"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc3</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.655" endtime="20210713 15:00:32.655"/>
+</kw>
+<for flavor="IN">
+<var>${tag}</var>
+<value>@{TEST TAGS}</value>
+<iter>
+<var name="${tag}">alltests</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tag}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.656" endtime="20210713 15:00:32.656"/>
+</kw>
+<status status="PASS" starttime="20210713 15:00:32.656" endtime="20210713 15:00:32.656"/>
+</iter>
+<iter>
+<var name="${tag}">dtests</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tag}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.657" endtime="20210713 15:00:32.658"/>
+</kw>
+<status status="PASS" starttime="20210713 15:00:32.656" endtime="20210713 15:00:32.658"/>
+</iter>
+<iter>
+<var name="${tag}">tc3</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tag}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.658" endtime="20210713 15:00:32.659"/>
+</kw>
+<status status="PASS" starttime="20210713 15:00:32.658" endtime="20210713 15:00:32.659"/>
+</iter>
+<iter>
+<var name="${tag}">tc3.1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${tag}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.659" endtime="20210713 15:00:32.660"/>
+</kw>
+<status status="PASS" starttime="20210713 15:00:32.659" endtime="20210713 15:00:32.660"/>
+</iter>
+<status status="PASS" starttime="20210713 15:00:32.655" endtime="20210713 15:00:32.660"/>
+</for>
+<kw name="Remove Tags" library="BuiltIn">
+<arg>tc3.1</arg>
+<doc>Removes given ``tags`` from the current test or all tests in a suite.</doc>
+<msg timestamp="20210713 15:00:32.661" level="INFO">Removed tag 'tc3.1'.</msg>
+<status status="PASS" starttime="20210713 15:00:32.660" endtime="20210713 15:00:32.661"/>
+</kw>
+<tag>alltests</tag>
+<tag>dtests</tag>
+<tag>tc3</tag>
+<status status="PASS" starttime="20210713 15:00:32.653" endtime="20210713 15:00:32.661"/>
+</test>
+<status status="PASS" starttime="20210713 15:00:32.644" endtime="20210713 15:00:32.663"/>
+</suite>
+<suite id="s1-s2" name="Rb2 Tests" source="D:\B-Mine\Company\Company\Harman2\OpenEMRApplication\DemoSuite\rb2_tests.robot">
+<test id="s1-s2-t1" name="TC21">
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc21</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.677" endtime="20210713 15:00:32.677"/>
+</kw>
+<tag>alltests</tag>
+<tag>dtests2</tag>
+<status status="PASS" starttime="20210713 15:00:32.674" endtime="20210713 15:00:32.678"/>
+</test>
+<test id="s1-s2-t2" name="TC22">
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc22</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.680" endtime="20210713 15:00:32.680"/>
+</kw>
+<tag>alltests</tag>
+<tag>dtests2</tag>
+<status status="PASS" starttime="20210713 15:00:32.679" endtime="20210713 15:00:32.680"/>
+</test>
+<test id="s1-s2-t3" name="TC23">
+<kw name="Log To Console" library="BuiltIn">
+<arg>tc23</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210713 15:00:32.683" endtime="20210713 15:00:32.683"/>
+</kw>
+<tag>alltests</tag>
+<tag>dtests2</tag>
+<status status="PASS" starttime="20210713 15:00:32.682" endtime="20210713 15:00:32.684"/>
+</test>
+<status status="PASS" starttime="20210713 15:00:32.664" endtime="20210713 15:00:32.685"/>
+</suite>
+<status status="PASS" starttime="20210713 15:00:32.613" endtime="20210713 15:00:32.687"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="6" fail="0" skip="0">alltests</stat>
+<stat pass="3" fail="0" skip="0">dtests</stat>
+<stat pass="3" fail="0" skip="0">dtests2</stat>
+<stat pass="1" fail="0" skip="0">tc1</stat>
+<stat pass="1" fail="0" skip="0">tc3</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Verify Invalid Credential Tests">Verify Invalid Credential Tests</stat>
+<stat pass="6" fail="0" skip="0" id="s1" name="Rb1 Tests &amp; Rb2 Tests">Rb1 Tests &amp; Rb2 Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Rb1 Tests">Rb1 Tests &amp; Rb2 Tests.Rb1 Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Rb2 Tests">Rb1 Tests &amp; Rb2 Tests.Rb2 Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210712 14:35:42.534" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:42.608" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:48.733" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
-<msg timestamp="20210712 14:35:48.751" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=91.0.4472.124)
-</msg>
 </errors>
 </robot>
