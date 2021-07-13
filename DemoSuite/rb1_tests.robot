@@ -4,7 +4,7 @@ Default Tags    dtests
 
 *** Test Cases ***
 TC1
-    [Tags]     dtests   tc1
+    [Tags]    OP-151
     Log To Console    tc1
 
 TC2
