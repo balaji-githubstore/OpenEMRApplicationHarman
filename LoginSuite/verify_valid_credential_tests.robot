@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation   This suite will handle all the test case related to
 ...     the valid credentails - OEM - 102 - Using Test Template
+
+Force Tags      alltests
 Resource    ../Resource/Base/common_functionality.resource
 
 Resource    ../Resource/Pages/LoginPage.resource

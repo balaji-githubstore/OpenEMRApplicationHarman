@@ -2,7 +2,6 @@
 Force Tags      alltests
 Default Tags    dtests
 
-
 *** Test Cases ***
 TC1
     [Tags]     dtests   tc1
